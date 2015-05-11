@@ -1,10 +1,10 @@
-# .center[Three.js]
+# Three.js
 
 <картинка с эволюцией от питекантропа до человека с подписью: "от FLASH до WebGL">
 
 ---
 
-## .center[Перспективы 2D/3D графики в web-проектах ИД]
+## Перспективы 2D/3D в web-проектах ИД
 
 - информационная функция: инфографика, графики и диаграммы;
 - развлекательная функция: мини-игры и онлайн квесты для спецпроектов, баннеры.
@@ -14,7 +14,7 @@
 
 ---
 
-## .center[WebGL, Three.js и jQuery]
+## WebGL, Three.js и jQuery
 
 ```javascript
 WebGL !== Three.js && WebGL > Three.js
@@ -25,7 +25,7 @@ WebGL !== Three.js && WebGL > Three.js
 
 ---
 
-## .center[Демонстрация возможностей]
+## Демонстрация возможностей
 
 - генерация базовой геометрии и текста
 - загружаемая геометрия
@@ -40,7 +40,7 @@ WebGL !== Three.js && WebGL > Three.js
 
 ---
 
-## .center[История развития и описание технологии]
+## История развития и описание технологии
 
 - 2004 - **OpenGL 2.0**: спецификация кроссплатформенного низкоуровневого API видеокарты. Служит для визуализации 2D и 3D графики.
 - 2007 - **OpenGL ES 2.0**: подмножество Open GL для встраиваемых систем - смартфонов, планшетов, игровых консолей. Базируется на OpenGL 2.0
@@ -54,20 +54,35 @@ WebGL !== Three.js && WebGL > Three.js
 
 ---
 
-## .center[Разберём конкретный пример]
+## Разберём конкретный пример
+
+[Типичная статья на elle.ru](http://www.elle.ru/celebrities/znamenitosti-kotoryie-proslavilis-sluchayno/)
+
+
+<webkitSpeechRecognition + генерация текста>
+
+---
+
+## Поддержка браузерами
+
+[сделать скриншоты для Basic support и 3D Canvas](http://caniuse.com/#search=canvas)
+
+---
+
+## Готовый проект - конструктор выставочных стендов
 
 
 
 ---
 
-## .center[Интересные проекты с Three.js]
+## Интересные проекты с Three.js
 
 ---
 
-## .center[Использованная литература]
+## Использованная литература
 1. Чертоги разума :)
 2. OpenGL: [Wiki](https://en.wikipedia.org/wiki/OpenGL)
 3. OpenGL ES: [Wiki](https://en.wikipedia.org/wiki/OpenGL_ES)
 4. WebGL: [Wiki](https://en.wikipedia.org/wiki/WebGL), [Разработчик спецификации - Khronos Group](https://www.khronos.org/webgl/)
-5. Three.js: [Исходный код на GitHub](https://github.com/mrdoob/three.js), [Технические демо](http://threejs.org/examples/)
+5. Three.js: [Исходный код на GitHub](https://github.com/mrdoob/three.js), [Технические демо](http://threejs.org/examples/), [Оф.документация](http://mrdoob.github.io/three.js/docs/)
 6. Шейдеры: [Wiki](https://en.wikipedia.org/wiki/Shader)
