@@ -56,10 +56,7 @@ WebGL !== Three.js && WebGL > Three.js
 
 ## Разберём конкретный пример
 
-[Типичная статья на elle.ru](http://www.elle.ru/celebrities/znamenitosti-kotoryie-proslavilis-sluchayno/)
-
-
-<webkitSpeechRecognition + генерация текста>
+Ключ для запуска Google Chrome: '--disable-web-security'
 
 ---
 
