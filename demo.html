@@ -23,6 +23,25 @@
 				top: 0;
 				bottom: 0;
 			}
+			#canvasContainer:before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background-color: rgba(255, 255, 255, 0.64);
+				-webkit-transition: opacity .5s ease;
+				-moz-transition: opacity .5s ease;
+				-o-transition: opacity .5s ease;
+				transition: opacity .5s ease;
+				opacity: 0;
+				z-index: -1;
+			}
+			#canvasContainer.show:before {
+				opacity: 1;
+				z-index: 1;
+			}
 			#canvasContainer canvas {
 				z-index: 2;
 			}
@@ -44,7 +63,7 @@
 		<div id="canvasContainer"></div>
 
 		<!-- Кнопка запуска демки -->
-		<input id="startButton" type="button" value="Пуск!" onclick="start();">
+		<input id="startButton" type="button" value="Пуск!" onclick="document.getElementById('canvasContainer').className = 'show'; setTimeout(function(){start()},500);" onmouseup="">
 
 		<!-- Three.js -->
 		<script src="./demo_assets/three.min.js"></script>
@@ -60,7 +79,8 @@
 				windowHeight = window.innerHeight,
 				offsetX = -windowWidth / 4,
 				offsetY = windowHeight / 4,
-				offsetZ = 0;
+				offsetZ = 0,
+				speedIncrease = 0;
 
 			// Запуск демки
 			function start() {
@@ -100,7 +120,7 @@
 					var text3d = new THREE.TextGeometry(theText, {
 						size: 20,
 						height: 5,
-						curveSegments: 2,
+						curveSegments: 1,
 						font: "comfortaa"
 					});
 
@@ -126,8 +146,8 @@
 
 				// Последовательно создаём и добавляем текстовые элементы в группу с небольшим смещением относительно предыдущего элемента
 				arrayOfStrings.forEach(function(item, index) {
-					// Отбрасываем пустые элементы и ограничиваемся сотней элементов
-					if (item != '' && item != ' ' && index < 100) {
+					// Отбрасываем пустые элементы и ограничиваемся 400 элементами
+					if (item !== '' && item != ' ' && index < 400) {
 						// Размещаем элементы на определённом участке экрана
 						if (offsetX < windowWidth / 4) {
 							offsetX += 70;
@@ -152,7 +172,7 @@
 
 				// WebGL рендер со сглаживанием и прозрачностью
 				renderer = new THREE.WebGLRenderer({
-					antialias: true,
+					antialias: false,
 					alpha: true
 				});
 				renderer.setClearColor(0x000000, 0);
@@ -173,7 +193,8 @@
 
 			// Каждый кадр сдвигаем группу по направлению к зрителю и обновляем окно рендера
 			function render() {
-				group.position.z += 10;
+				group.position.z += 10 + speedIncrease;
+				speedIncrease += 0.15;
 				renderer.render(scene, camera);
 			}
 
